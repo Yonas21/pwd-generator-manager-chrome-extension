@@ -16,9 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
     generateButton.addEventListener("click", function() {
         const passwordLength = parseInt(document.getElementById("length").value) || 12;
         const newPassword = generatePassword(passwordLength);
-        console.log("newPassword================================", newPassword);
         passwordDisplay.value = newPassword;
-        generatedPassword.textContent = newPassword;
     });
 
     copyButton.addEventListener("click", function () {
