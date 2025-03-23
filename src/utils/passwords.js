@@ -31,29 +31,5 @@ function generatePassword(length) {
 	return password;
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-	const generateButton = document.getElementById("generate");
-	const passwordDisplay = document.getElementById("password");
-	const copyButton = document.getElementById("copy");
 
-	generateButton.addEventListener("click", function () {
-		const passwordLength =
-			parseInt(document.getElementById("length").value) || 12;
-		const newPassword = generatePassword(passwordLength);
-		passwordDisplay.value = newPassword;
-	});
-
-	copyButton.addEventListener("click", function () {
-		if (passwordDisplay.value) {
-			passwordDisplay.select();
-			passwordDisplay.setSelectionRange(0, 99999); // For mobile devices
-			document.execCommand("copy");
-
-			// Show a confirmation message
-			copyButton.textContent = "Copied!";
-			setTimeout(() => {
-				copyButton.textContent = "Copy to Clipboard";
-			}, 1500);
-		}
-	});
-});
+export { generatePassword }
